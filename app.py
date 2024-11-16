@@ -58,7 +58,7 @@ def generate_bio():
     bio = bio[len(prompt):].strip()
     
     if not bio or "list" in bio or "top" in bio:
-        bio = "This person is adventurous, caring, and looking for a meaningful connection with someone who shares their values and interests.
+        bio = "This person is adventurous, caring, and looking for a meaningful connection with someone who shares their values and interests."
         
     return render_template('result.html', bio=bio)
 
