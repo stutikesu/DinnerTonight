@@ -6,12 +6,10 @@ import random
 
 app = Flask(__name__)
 
-# Load the pre-trained GPT-2 model and tokenizer
 model_name = "gpt2"
 model = GPT2LMHeadModel.from_pretrained(model_name)
 tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 
-# Set the model to evaluation mode
 model.eval()
 
 @app.route('/')
