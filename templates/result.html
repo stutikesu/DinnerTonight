@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Romantic Bio</title>
+    <style>
+        /* Base reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-image: url('https://img.freepik.com/premium-photo/side-view-happy-young-couple-enjoying-talking-sitting-together-dinner-table-cozy-dark-living-room_482921-7717.jpg'); /* Add the background image URL */
+            background-size: cover; /* Make sure the background image covers the entire page */
+            background-position: center center; /* Center the background image */
+            background-attachment: fixed; /* Make the background image fixed when scrolling */
+            color: #4b3832; /* Elegant dark brown text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: rgba(255, 250, 240, 0.9); /* Light transparent background */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial shadow */
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.5s ease, opacity 0.5s ease;
+            opacity: 1; /* Start fully visible */
+        }
+
+        /* Hover Effects */
+        .container:hover {
+            transform: scale(1.05); /* Slight zoom effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow */
+            background-color: rgba(191, 105, 82, 0.8); /* Romantic blush color */
+        }
+
+        /* Headings */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #bf6952; /* Romantic deep blush */
+        }
+
+        /* Form Styling */
+        form div {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: #4b3832;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d3a797; /* Subtle blush border */
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #4b3832;
+            background-color: #fdf8f3;
+            outline: none;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        select:focus {
+            border-color: #bf6952;
+            box-shadow: 0 0 5px rgba(191, 105, 82, 0.4);
+        }
+
+        /* Button */
+        button {
+            background-color: #bf6952; /* Romantic deep blush */
+            color: #fff; /* White text for contrast */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #a45241; /* Slightly darker for hover */
+            transform: scale(1.05);
+        }
+
+        /* Bio Result Styling */
+        .bio-result {
+            margin-top: 20px;
+            background-color: rgba(255, 248, 243, 0.9); /* Semi-transparent ivory */
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #d3a797;
+        }
+
+        .bio-result h2 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #bf6952;
+        }
+
+        .bio-result p {
+            font-size: 1rem;
+            color: #4b3832;
+            line-height: 1.5;
+        }
+
+        /* Result Page CSS */
+        /* Body Styling */
+        body {
+            background-color: #fef9f5; /* Soft cream background */
+            color: #4b3832; /* Elegant dark brown text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: #fffaf0; /* Warm ivory card background */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Headings */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #bf6952; /* Romantic deep blush */
+        }
+
+        /* Paragraph Styling */
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #4b3832;
+            line-height: 1.5;
+        }
+
+        /* Link Styling */
+        a {
+            color: #bf6952; /* Deep blush color */
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #a45241; /* Slightly darker for hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Generated Bio</h1>
+        <p>{{ bio }}</p>
+        <a href="/">Create another bio</a>
+    </div>
+</body>
+</html>

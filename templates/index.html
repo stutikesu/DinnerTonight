@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Romantic Bio</title>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-image: url('https://img.freepik.com/premium-photo/silhouettes-couple-romantic-dinner-date_1022970-26426.jpg'); /* Background image */
+    background-size: cover; /* Background size */
+    background-position: center center; /* Center image */
+    background-attachment: fixed; /* Fixed background */
+    color: #4b3832; /* Dark brown text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Styling */
+.container {
+    background-color: rgba(255, 250, 240, 0.9); /* Light transparent background */
+    padding: 50px 30px 30px; /* Increased padding at the top to shift content down */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+    max-width: 500px;
+    width: 100%;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.5s ease, opacity 0.5s ease;
+    opacity: 1; /* Start fully visible */
+    height: 600px; /* Increased height for the container */
+}
+
+/* Hover Effects for Container */
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: rgba(191, 105, 82, 0.8); /* Romantic blush color */
+}
+
+/* Headings */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #bf6952; /* Deep blush */
+    font-weight: 600; /* Bold heading */
+}
+
+/* Form Styling */
+form {
+    margin-top: 58px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+    text-align: left;
+}
+
+/* Form Fields */
+label {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #4b3832; /* Dark brown */
+}
+
+/* Dropdown */
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d3a797; /* Blush border */
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #4b3832;
+    background-color: #fdf8f3; /* Light background */
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+select:focus {
+    border-color: #bf6952; /* Focus border color */
+    box-shadow: 0 0 5px rgba(191, 105, 82, 0.4);
+}
+
+/* Button */
+button {
+    background-color: #bf6952; /* Romantic blush */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px; /* Larger padding for emphasis */
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    width: 100%; /* Button takes up full width */
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #a45241;
+    transform: scale(1.05);
+}
+
+/* Bio Result Styling */
+.bio-result {
+    margin-top: 20px;
+    background-color: rgba(255, 248, 243, 0.9); /* Semi-transparent ivory */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d3a797;
+    display: none; /* Initially hidden, show after form submission */
+}
+
+.bio-result h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #bf6952; /* Romantic blush */
+    font-weight: 600;
+}
+
+.bio-result p {
+    font-size: 1rem;
+    color: #4b3832;
+    line-height: 1.5;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="color: black; font-style: italic;">Dinner Tonight with Bio</h2>
+        <form action="/generate_bio" method="POST">
+            <div>
+                <label for="career">Career:</label>
+                <select id="career" name="career" required>
+                    <option value="Entrepreneur" selected>Entrepreneur</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Artist">Artist</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Musician">Musician</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="personality">Personality:</label>
+                <select id="personality" name="personality" required>
+                    <option value="Introverted" selected>Introverted</option>
+                    <option value="Adventurous">Adventurous</option>
+                    <option value="Empathetic">Empathetic</option>
+                    <option value="Extroverted">Extroverted</option>
+                    <option value="Optimistic">Optimistic</option>
+                    <option value="Creative">Creative</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="interests">Interests:</label>
+                <select id="interests" name="interests" required>
+                    <option value="Traveling" selected>Traveling</option>
+                    <option value="Reading">Reading</option>
+                    <option value="Music">Music</option>
+                    <option value="Cooking">Cooking</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Art">Art</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="relationship_goals">Relationship Goals:</label>
+                <select id="relationship_goals" name="relationship_goals" required>
+                    <option value="Looking for a meaningful connection" selected>Looking for a meaningful connection</option>
+                    <option value="Open to new relationships">Open to new relationships</option>
+                    <option value="Seeking a lifelong partner">Seeking a lifelong partner</option>
+                    <option value="Casual dating">Casual dating</option>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit">Generate Bio</button>
+            </div>
+        </form>
+    </div>
+
+    {% if bio %}
+        <div class="bio-result">
+            <h2>Your Generated Bio:</h2>
+            <p>{{ bio }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
