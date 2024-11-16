@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 import torch
+import os
 import random
 
 app = Flask(__name__)
@@ -68,4 +69,6 @@ def generate_bio():
     return render_template('result.html', bio=bio)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Use the port assigned by Render or default to 5000 for local testing
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
